@@ -1,7 +1,10 @@
 ---
 title: "Coursera Reproducible Research Assignment1"
-output: html_document
+output: 
+  html_document:
+    keep_md: true
 ---
+
 Loading necessary libraries and read the data
 ```{r warning=F}
 library(plyr)
@@ -19,7 +22,7 @@ colnames(steps_per_day) <- c("date","steps")
 ```
 
 Histogram of total steps per day
-```{r}
+```{r plot1, echo=TRUE, fig.path='figures/' }
 hist(steps_per_day$steps, breaks=15, main="Total number of steps taken each day", xlab="Total number of steps", col="red")
 ```
 
@@ -34,7 +37,7 @@ colnames(intSteps) <- c("interval", "steps")
 ```
 
 Time series plot (i.e. type = 'l') of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
-```{r}
+```{r plot2, echo=TRUE, fig.path='figures/' }
 plot(intSteps$interval, intSteps$steps, type="l", main="Daliy activity pattern in 5 min interval",xlab="Interval", ylab="Average number of steps")
 ```
 
@@ -65,7 +68,7 @@ tidyDataTotSteps <- aggregate(steps ~ date, data = newActivity, sum, na.rm = TRU
 ```
 
 Plotting the histogram with imputed values
-``` {r}
+```{r plot3, echo=TRUE, fig.path='figures/' }
 hist(tidyDataTotSteps$steps, breaks = 15, main = "Total steps by day", xlab = "Day", col = "red")
 ```
 
@@ -89,7 +92,7 @@ names(stepsDayType) <- c("interval", "dayType", "steps")
 ```
 
 Time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekdays or weekends (y-axis).
-``` {r}
+```{r plot4, echo=TRUE, fig.path='figures/' }
 xyplot(steps ~ interval | dayType, stepsDayType, type = "l", layout = c(1, 2), 
          xlab = "Interval", ylab = "Number of steps")
 ```

@@ -24,7 +24,7 @@ Histogram of total steps per day
 hist(steps_per_day$steps, breaks=15, main="Total number of steps taken each day", xlab="Total number of steps", col="red")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![](figures/plot1-1.png) 
 
 
 Average number of steps taken by the volunteers: 1.0766189\times 10^{4} and median:1.0765\times 10^{4}
@@ -43,7 +43,7 @@ Time series plot (i.e. type = 'l') of the 5-minute interval (x-axis) and the ave
 plot(intSteps$interval, intSteps$steps, type="l", main="Daliy activity pattern in 5 min interval",xlab="Interval", ylab="Average number of steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![](figures/plot2-1.png) 
 
 
 ```r
@@ -79,7 +79,7 @@ Plotting the histogram with imputed values
 hist(tidyDataTotSteps$steps, breaks = 15, main = "Total steps by day", xlab = "Day", col = "red")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-8-1.png) 
+![](figures/plot3-1.png) 
 
 After filling the NA values with mean of the intervals, the average number of steps taken by the volunteers: 1.0766189\times 10^{4} and median:1.0766189\times 10^{4}
 
@@ -108,5 +108,5 @@ xyplot(steps ~ interval | dayType, stepsDayType, type = "l", layout = c(1, 2),
          xlab = "Interval", ylab = "Number of steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
+![](figures/plot4-1.png) 
 
