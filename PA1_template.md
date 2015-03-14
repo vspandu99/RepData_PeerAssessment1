@@ -50,10 +50,11 @@ plot(intSteps$interval, intSteps$steps, type="l", main="Daliy activity pattern i
 maxInterval <- intSteps[intSteps$steps==max(intSteps$steps),]$interval
 ```
 
-Maximum number of steps taken at 835 minutes, i.e. at 13 hours  and 55 minutes from the start of data collection time.
+##### Maximum number of steps taken at 835 minutes, i.e. at 13 hours  and 55 minutes from the start of data collection time.
 
 ##### Imputing missing values.
 Total numberof missing values in the given datare are 2304
+For these missing values the strategy to impute the values is to fill missing values with inteval averages.
 
 
 ```r
